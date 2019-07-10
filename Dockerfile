@@ -24,7 +24,10 @@ RUN apt-get update && \
         unzip && \
     rm -rf /var/lib/apt/lists/* && \
     wget https://getcomposer.org/composer.phar -O /usr/local/bin/composer && \
-    chmod a+rx /usr/local/bin/composer
+    chmod a+rx /usr/local/bin/composer && \
+    wget https://phar.phpunit.de/phpunit-6.phar -O /usr/local/bin/phpunit && \
+    chmod +x /usr/local/bin/phpunit
+
 
 ## ----- Set LOCALE to UTF8
 RUN apt update && apt install -y locales && \
