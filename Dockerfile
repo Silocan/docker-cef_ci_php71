@@ -56,9 +56,9 @@ RUN docker-php-ext-configure mysqli && \
     docker-php-ext-install sockets && \
     docker-php-ext-install bcmath
 
-#COPY docker/docker-entrypoint.sh /entrypoint.sh
-#RUN chmod +x /entrypoint.sh
+# Installation de Vault
+ENV VAULT_VERSION="0.10.4"
+ENV VAULT_ZIP="vault_${VAULT_VERSION}_linux_amd64.zip"
 
-#RUN docker-php-ext-install bcmath
-
-#ENTRYPOINT ["/entrypoint.sh"]
+RUN wget https://releases.hashicorp.com/vault/$VAULT_VERSION/$VAULT_ZIP && \
+	unzip $VAULT_ZIP -d /usr/sbin && rm $VAULT_ZIP
