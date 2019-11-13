@@ -15,8 +15,6 @@ RUN apt-get update && \
         libcurl4-openssl-dev \
         libssl-dev \
         curl \
-        ssmtp \
-        mysql-client \
         git \
         subversion \
         wget \
