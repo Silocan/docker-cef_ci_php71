@@ -19,7 +19,9 @@ RUN apt-get update && \
         subversion \
         wget \
         zip \
-        unzip && \
+        unzip \
+        rsync \
+        openssh-client && \
     rm -rf /var/lib/apt/lists/* && \
     wget https://getcomposer.org/composer.phar -O /usr/local/bin/composer && \
     chmod a+rx /usr/local/bin/composer && \
